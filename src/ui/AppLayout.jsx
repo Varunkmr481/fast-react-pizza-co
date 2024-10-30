@@ -1,11 +1,11 @@
-import Header from "./Header";
-import CartOverview from "./../features/cart/CartOverview";
-import { Outlet, useNavigation } from "react-router-dom";
-import Loader from "./Loader";
+import Header from './Header';
+import CartOverview from './../features/cart/CartOverview';
+import { Outlet, useNavigation } from 'react-router-dom';
+import Loader from './Loader';
 
 function AppLayout() {
   const navigation = useNavigation();
-  const isLoading = navigation.state === "loading";
+  const isLoading = navigation.state === 'loading';
   // console.table([navigation, isLoading]);
 
   return (
@@ -15,10 +15,10 @@ function AppLayout() {
       <Header />
 
       <main>
-        <h1>Content</h1>
-        <div>......................................</div>
+        {/* <h1>Content</h1> */}
+        {/* <div>......................................</div> */}
         <Outlet />
-        <div>......................................</div>
+        {/* <div>......................................</div> */}
       </main>
 
       <CartOverview />
