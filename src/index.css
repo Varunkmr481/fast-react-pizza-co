@@ -6,44 +6,90 @@
   .input {
     @apply w-full rounded-full border border-stone-200 px-4 py-2 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring focus:ring-yellow-400 md:px-6 md:py-3;
   }
-}
 
-/* https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
-.loader {
-  width: 45px;
-  aspect-ratio: 0.75;
-  --c: no-repeat linear-gradient(#333 0 0);
-  background:
-    var(--c) 0% 50%,
-    var(--c) 50% 50%,
-    var(--c) 100% 50%;
-  background-size: 20% 50%;
-  animation: loading 1s infinite linear;
-}
+  /* https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
+  .loader {
+    width: 45px;
+    aspect-ratio: 0.75;
+    --c: no-repeat linear-gradient(#333 0 0);
+    background:
+      var(--c) 0% 50%,
+      var(--c) 50% 50%,
+      var(--c) 100% 50%;
+    background-size: 20% 50%;
+    animation: loading 1s infinite linear;
+  }
 
-@keyframes loading {
-  20% {
-    background-position:
-      0% 0%,
-      50% 50%,
-      100% 50%;
+  @keyframes loading {
+    20% {
+      background-position:
+        0% 0%,
+        50% 50%,
+        100% 50%;
+    }
+    40% {
+      background-position:
+        0% 100%,
+        50% 0%,
+        100% 50%;
+    }
+    60% {
+      background-position:
+        0% 50%,
+        50% 100%,
+        100% 0%;
+    }
+    80% {
+      background-position:
+        0% 50%,
+        50% 50%,
+        100% 100%;
+    }
   }
-  40% {
-    background-position:
-      0% 100%,
-      50% 0%,
-      100% 50%;
+
+  .loader-2 {
+    width: 40px;
+    height: 40px;
+    color: #facc15;
+    background: linear-gradient(currentColor 0 0),
+      linear-gradient(currentColor 0 0), linear-gradient(currentColor 0 0),
+      linear-gradient(currentColor 0 0);
+    background-size: 21px 21px;
+    background-repeat: no-repeat;
+    animation: loading-2 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
   }
-  60% {
-    background-position:
-      0% 50%,
-      50% 100%,
-      100% 0%;
-  }
-  80% {
-    background-position:
-      0% 50%,
-      50% 50%,
-      100% 100%;
+  @keyframes loading-2 {
+    0% {
+      background-position:
+        0 0,
+        100% 0,
+        100% 100%,
+        0 100%;
+    }
+    33% {
+      background-position:
+        0 0,
+        100% 0,
+        100% 100%,
+        0 100%;
+      width: 60px;
+      height: 60px;
+    }
+    66% {
+      background-position:
+        100% 0,
+        100% 100%,
+        0 100%,
+        0 0;
+      width: 60px;
+      height: 60px;
+    }
+    100% {
+      background-position:
+        100% 0,
+        100% 100%,
+        0 100%,
+        0 0;
+    }
   }
 }
