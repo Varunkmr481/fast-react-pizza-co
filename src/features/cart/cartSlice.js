@@ -60,6 +60,8 @@ export default cartSlice.reducer;
 
 // These selectors can cause performance issues, use reselect library for optimising these selector functions
 
+export const getCart = (state) => state.cart.cart;
+
 // iterates over an array and reduces it to a single value
 export const getTotalCartQuantity = (state) =>
   state.cart.cart.reduce((sum, currItem) => sum + currItem.quantity, 0);
